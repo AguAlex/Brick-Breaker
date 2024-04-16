@@ -25,6 +25,10 @@ private:
 	sf::Font font;
 	sf::Text score;
 	int score_value = 0;
+	bool endGame = false;
+	sf::Texture endgameTexture;
+	sf::Sprite endgameBackground;
+	
 
 
 	//Game objects

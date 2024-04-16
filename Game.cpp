@@ -52,26 +52,7 @@ void Game::pollEvents()
     }
     //Logica coliziunii ball-platform
     if (ball.getPosition().intersects(platform.getPosition()))
-    {   /*
-        // Verifică coliziunea cu partea stângă a platformei
-        if (ball.getPosition().left <= platform.getPosition().left + platform.getPosition().width / 2)
-        {
-            if (bounceTimer < 0)
-            {
-                ball.hitPlatformLeft(); // Coliziune cu partea stângă a platformei
-                bounceTimer = 0.10f;
-            }
-        }
-        // Verifică coliziunea cu partea dreaptă a platformei
-        else if (ball.getPosition().left > platform.getPosition().left + platform.getPosition().width / 2)
-        {
-            if (bounceTimer < 0)
-            {
-                ball.hitPlatformRight(); // Coliziune cu partea dreaptă a platformei
-                bounceTimer = 0.10f;
-            }
-        }
-        */
+    {   
         if (bounceTimer < 0)
         {
             ball.hitPlatform(); // Coliziune cu partea stângă a platformei
@@ -126,10 +107,32 @@ void Game::render()
     */
    
     bool check = false;
-    for (int i = 0; i <= 20; i++)
-        if (i == true)
+    for (int i = 0; i <= 6; i++)
+        if (bricks_status[i] == true)
             check = true;
-    if (check == true)
+    if (!check)
+    {
+        endGame = true;
+    }
+    
+    
+    // Dacă jocul a fost încheiat, afișează ecranul de sfârșit de joc
+    if (score_value == 3)
+    {
+        window->clear();
+        window->draw(endgameBackground);
+        sf::Text endText;
+        endText.setFont(font);
+        endText.setString("Congratulations! Your Score: " + std::to_string(score_value));
+        endText.setCharacterSize(36);
+        endText.setFillColor(sf::Color::White);
+        endText.setPosition(1280/2.f, 720/2.f);
+        endText.setOrigin(endText.getGlobalBounds().width / 2, endText.getGlobalBounds().height / 2);
+        window->draw(endText);
+        window->display();
+        return; // Ieși din funcția de render pentru a evita afișarea altor obiecte de joc
+    }
+    else
     {
         window->clear(sf::Color(255, 100, 100, 255));
         ball.update(dt);
@@ -141,7 +144,7 @@ void Game::render()
         int cnt = 0;
         for (auto i : bricks)
         {
-
+            
             if (bricks_status[cnt] == true)
                 window->draw(i->getSprite());
             if (ball.getPosition().intersects(i->getPosition()) && bricks_status[cnt] == true)
@@ -172,15 +175,6 @@ void Game::render()
         window->draw(score);
 
     }
-    else
-    {
-        window->clear(sf::Color(125, 150, 150, 255));
-    }
-
-    
-
-    
-    
         
 
     //Draw objects
@@ -243,5 +237,9 @@ void Game::initVariables()
     score.setCharacterSize(24);
     score.setString("Score: 0");
     score.setOrigin(sf::Vector2f(-20.0f, -20.0f));
+
+    endgameTexture.loadFromFile("endgame.jpg");
+    endgameBackground.setTexture(endgameTexture);
+    
    
 }
