@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{783ae014-09d9-4acf-96a1-dc6d75a7f9d5}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\External\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\External\lib;%(AdditionalIncludeDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\External\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\External\lib;%(AdditionalIncludeDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\external\lib;%(AdditionalIncludeDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\external\lib;%(AdditionalIncludeDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Platform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundFileFactory.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Glsl.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Rect.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\String.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Thread.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\ThreadLocalPtr.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Utf.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Vector2.inl" />
+    <None Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Vector3.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\AlResource.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Audio\SoundStream.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Config.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\GpuPreference.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Glsl.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\VertexBuffer.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Main.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\Export.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\Ftp.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\Http.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\IpAddress.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\Packet.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\Socket.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\SocketHandle.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\SocketSelector.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\TcpListener.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\TcpSocket.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Network\UdpSocket.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\OpenGL.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Clock.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Err.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Export.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\FileInputStream.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\InputStream.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Lock.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\MemoryInputStream.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Mutex.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\NativeActivity.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\NonCopyable.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Sleep.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\String.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Thread.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\ThreadLocal.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Time.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Utf.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Vector2.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\System\Vector3.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Vulkan.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\WindowBase.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\Facultate\external\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Brick.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Platform.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
