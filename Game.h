@@ -26,7 +26,7 @@ private:
 	//Game objects
 	Ball ball;
 	Platform platform;
-	std::list<Brick> bricks;
+	std::list<Brick*> bricks;
 	bool bricks_status[30] = {};
 	int lung = 82*2;
 

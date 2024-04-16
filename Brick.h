@@ -24,8 +24,53 @@ public:
 		std::cout << getPosition().width << std::endl;
 	}
 
+	virtual void brick_power() = 0;
+
 	Brick(float startX = 0.0f, float startY = 0.0f);
 	void update(sf::Time dt);
 
 };
+
+class AddingBallBrick : public Brick
+{
+public:
+	void brick_power()	override
+	{
+		std::cout << "Adding Ball Brick"<<std::endl;
+	}
+	
+	AddingBallBrick(float startX = 0.0f, float startY = 0.0f)
+	{
+		position.x = startX;
+		position.y = startY;
+
+		texture.loadFromFile("assets/brick.png");
+		spp.setTexture(texture);
+		spp.setPosition(position);
+		spp.setScale(sf::Vector2f(0.2, 0.2));
+	}
+
+};
+
+class PointBrick : public Brick
+{
+public:
+	void brick_power() override
+	{
+		std::cout << "Point Brick" << std::endl;
+	}
+
+	PointBrick(float startX = 0.0f, float startY = 0.0f)
+	{
+		position.x = startX;
+		position.y = startY;
+
+		texture.loadFromFile("assets/brick.png");
+		spp.setTexture(texture);
+		spp.setPosition(position);
+		spp.setScale(sf::Vector2f(0.2, 0.2));
+	}
+
+};
+
 

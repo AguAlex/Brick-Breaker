@@ -1,5 +1,6 @@
 ﻿#include "Game.h"
 #include <iostream>
+#include <time.h>
 
 //Constructor & Destructor
 Game::Game()
@@ -12,6 +13,10 @@ Game::Game()
 Game::~Game()
 {
 	delete this->window;
+    for (auto i : bricks)
+    {
+        delete i;
+    }
     
 }
 
@@ -138,21 +143,23 @@ void Game::render()
         {
 
             if (bricks_status[cnt] == true)
-                window->draw(i.getSprite());
-            if (ball.getPosition().intersects(i.getPosition()) && bricks_status[cnt] == true)
+                window->draw(i->getSprite());
+            if (ball.getPosition().intersects(i->getPosition()) && bricks_status[cnt] == true)
             {
                 bricks_status[cnt] = false;
                 //Coliziune pe stanga sau dreapta brick
-                if (ball.getPosition().left + ball.getPosition().width <= i.getPosition().left + (i.getPosition().width / 2)
-                    || ball.getPosition().left >= i.getPosition().left + (i.getPosition().width / 2))
+                if (ball.getPosition().left + ball.getPosition().width <= i->getPosition().left + (i->getPosition().width / 2)
+                    || ball.getPosition().left >= i->getPosition().left + (i->getPosition().width / 2))
                     ball.hitSides();
 
                 //Coliziune sus
-                if (ball.getPosition().top + ball.getPosition().height <= i.getPosition().top + (i.getPosition().height / 2))
+                if (ball.getPosition().top + ball.getPosition().height <= i->getPosition().top + (i->getPosition().height / 2))
                     ball.hitPlatform();
 
-                if (ball.getPosition().top >= i.getPosition().top + (i.getPosition().height / 2))
+                if (ball.getPosition().top >= i->getPosition().top + (i->getPosition().height / 2))
                     ball.hitTop();
+
+                i->brick_power();
 
             }
 
@@ -193,6 +200,7 @@ void Game::initVariables()
     window = nullptr;
     ball = Ball(1280/2, 500);
     platform = Platform(1280 / 2, 700);
+    srand(time(NULL));
     int auxx = 120, auxy = 10;
     
     for (int i = 1; i <= 1; i++)
@@ -200,10 +208,25 @@ void Game::initVariables()
         auxx = 110;
         for (int j = 1; j <= 7; j++)
         {
-            Brick aux = Brick(auxx, auxy);
+            //PointBrick aux = PointBrick(auxx, auxy);
 
+            int randomNumber = std::rand() % 10 + 1;
+            //std::cout << randomNumber << " ";
+
+            switch (randomNumber % 2)
+            {
+            case 1:
+                bricks.push_back(new PointBrick(auxx, auxy));
+                break;
+            case 0:
+                bricks.push_back(new AddingBallBrick(auxx, auxy));
+                break;
+            default:
+                break;
+            }
+            
             auxx += lung;
-            bricks.push_back(aux);
+           
         }
             
         auxy += lung;
