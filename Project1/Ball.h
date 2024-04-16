@@ -11,7 +11,7 @@ class Ball
 {
 private:
 	sf::Vector2f position;
-	sf::RectangleShape ballShape;
+	sf::CircleShape ballShape;
 
 	float move_speed = 400;
 	float move_directionX = 1.0f;
@@ -25,7 +25,7 @@ public:
 
 	sf::FloatRect getPosition();
 
-	sf::RectangleShape getShape();
+	sf::CircleShape getShape();
 
 	float getXValue();
 

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <time.h>
 
+
+
+
 //Constructor & Destructor
 Game::Game()
 {
@@ -17,6 +20,7 @@ Game::~Game()
     {
         delete i;
     }
+    delete platform;
     
 }
 
@@ -51,7 +55,7 @@ void Game::pollEvents()
         }
     }
     //Logica coliziunii ball-platform
-    if (ball.getPosition().intersects(platform.getPosition()))
+    if (ball.getPosition().intersects(platform->getPosition()))
     {   
         if (bounceTimer < 0)
         {
@@ -61,15 +65,15 @@ void Game::pollEvents()
     }
 
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && platform.getPosition().left > 0)
-            platform.moveLeft();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && platform->getPosition().left > 0)
+            platform->moveLeft();
         else
-            platform.stopLeft();
+            platform->stopLeft();
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && platform.getPosition().left + platform.getPosition().width < 1280)
-            platform.moveRight();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && platform->getPosition().left + platform->getPosition().width < 1280)
+            platform->moveRight();
         else
-            platform.stopRight();
+            platform->stopRight();
        
     
     
@@ -117,7 +121,7 @@ void Game::render()
     
     
     // Dacă jocul a fost încheiat, afișează ecranul de sfârșit de joc
-    if (score_value == 3)
+    if (endGame)
     {
         window->clear();
         window->draw(endgameBackground);
@@ -134,13 +138,13 @@ void Game::render()
     }
     else
     {
-        window->clear(sf::Color(255, 100, 100, 255));
+        window->clear(sf::Color(157, 43, 196, 90));
         ball.update(dt);
-        platform.update(dt);
+        platform->update(dt);
 
 
         window->draw(ball.getShape());
-        window->draw(platform.getShape());
+        window->draw(platform->getShape());
         int cnt = 0;
         for (auto i : bricks)
         {
@@ -184,10 +188,10 @@ void Game::render()
 //Private Functions
 void Game::initWindow()
 {
-	videoMode.height = 720;
-	videoMode.width = 1280;
+	videoMode.height = windowHeight;
+	videoMode.width = windowWidth;
 	
-	window = new sf::RenderWindow(videoMode, "First Game!", sf::Style::Titlebar | sf::Style::Close);
+	window = new sf::RenderWindow(videoMode, "Brick Breaker!", sf::Style::Titlebar | sf::Style::Close);
 
     window->setFramerateLimit(140);
 }
@@ -195,8 +199,8 @@ void Game::initWindow()
 void Game::initVariables()
 {
     window = nullptr;
-    ball = Ball(1280/2, 500);
-    platform = Platform(1280 / 2, 700);
+    ball = Ball(windowWidth/2, 680);
+    platform = new Platform(windowWidth / 2, 700);
     srand(time(NULL));
     int auxx = 120, auxy = 10;
     

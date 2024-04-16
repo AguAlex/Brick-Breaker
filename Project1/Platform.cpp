@@ -5,12 +5,16 @@ Platform::Platform(float startX, float startY)
 	position.x = startX;
 	position.y = startY;
 
-	shape.setSize(sf::Vector2f(200, 15));
-	shape.setFillColor(sf::Color::Black);
+	platformTexture.loadFromFile("assets/platform.png");
+	shape.setTexture(platformTexture);
+
+
 	shape.setPosition(position);
+	
+	shape.setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
-sf::RectangleShape Platform::getShape()
+sf::Sprite Platform::getShape()
 {
 	return shape;
 }

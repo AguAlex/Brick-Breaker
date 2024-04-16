@@ -19,10 +19,7 @@ public:
 
 	sf::FloatRect getPosition();
 
-	void test()
-	{
-		std::cout << getPosition().width << std::endl;
-	}
+	
 
 	virtual void brick_power() = 0;
 

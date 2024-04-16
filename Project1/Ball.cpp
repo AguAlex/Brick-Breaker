@@ -6,8 +6,8 @@ Ball::Ball(float startX, float startY)
 	position.y = startY;
 
 	ballShape.setPosition(position);
-	ballShape.setSize(sf::Vector2f(30, 30));
-	ballShape.setFillColor(sf::Color(100, 100, 100, 255));
+	ballShape.setRadius(15);
+	ballShape.setFillColor(sf::Color(255, 120, 255, 255));
 }
 
 //Getters & Setters
@@ -16,7 +16,7 @@ sf::FloatRect Ball::getPosition()
 	return ballShape.getGlobalBounds();
 }
 
-sf::RectangleShape Ball::getShape()
+sf::CircleShape Ball::getShape()
 {
 	return ballShape;
 }

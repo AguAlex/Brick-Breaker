@@ -28,12 +28,15 @@ private:
 	bool endGame = false;
 	sf::Texture endgameTexture;
 	sf::Sprite endgameBackground;
+
+	const int windowHeight = 720;
+	const int windowWidth = 1280;
 	
 
 
 	//Game objects
 	Ball ball;
-	Platform platform;
+	Platform *platform;
 	std::list<Brick*> bricks;
 	bool bricks_status[30] = {};
 	int lung = 82*2;

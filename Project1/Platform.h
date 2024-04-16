@@ -9,8 +9,11 @@ class Platform
 {
 private:
 
-	sf::RectangleShape shape;
 	sf::Vector2f position;
+	sf::Texture platformTexture;
+	sf::Sprite shape;
+
+	
 	float speed = 1100.0f;
 
 	bool movingLeft = false;
@@ -19,7 +22,7 @@ private:
 public:
 	Platform(float startX = 0.0f, float startY = 0.0f);
 
-	sf::RectangleShape getShape();
+	sf::Sprite getShape();
 	sf::FloatRect getPosition();
 
 	void moveLeft();
