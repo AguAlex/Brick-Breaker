@@ -22,6 +22,10 @@ private:
 	sf::Time dt;
 	sf::Clock clock;
 	float bounceTimer = 0.10f; //for some bugs
+	sf::Font font;
+	sf::Text score;
+	int score_value = 0;
+
 
 	//Game objects
 	Ball ball;

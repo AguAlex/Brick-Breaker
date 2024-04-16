@@ -160,13 +160,16 @@ void Game::render()
                     ball.hitTop();
 
                 i->brick_power();
+                score_value++;
+                //std::cout << score_value << std::endl;
+                score.setString("Score: " + std::to_string(score_value));
 
             }
 
             cnt++;
 
         }
-   
+        window->draw(score);
 
     }
     else
@@ -235,6 +238,10 @@ void Game::initVariables()
     for (int i=0 ; i<=20; i++)
         bricks_status[i] = true;
 
-    
+    font.loadFromFile("Dogfiles.otf");
+    score.setFont(font);
+    score.setCharacterSize(24);
+    score.setString("Score: 0");
+    score.setOrigin(sf::Vector2f(-20.0f, -20.0f));
    
 }
