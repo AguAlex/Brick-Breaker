@@ -4,6 +4,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+//Base class (abstract class)
 class Brick
 {
 protected:
@@ -15,58 +16,50 @@ protected:
 
 public:
 
+	//Getters
 	sf::Sprite getSprite();
 
 	sf::FloatRect getPosition();
 
 	
-
+	//Virtual method, because each type of brick does something special
+	//This line force each derived class to override own implementetion for method
 	virtual void brick_power() = 0;
 
+	//Constructor
 	Brick(float startX = 0.0f, float startY = 0.0f);
+
+	//Updating brick on screen
 	void update(sf::Time dt);
 
 };
 
+//Derived brick classes (inheritance)
+
+//#1
 class AddingBallBrick : public Brick
 {
 public:
-	void brick_power()	override
-	{
-		std::cout << "Adding Ball Brick"<<std::endl;
-	}
 	
-	AddingBallBrick(float startX = 0.0f, float startY = 0.0f)
-	{
-		position.x = startX;
-		position.y = startY;
-
-		texture.loadFromFile("assets/brick.png");
-		spp.setTexture(texture);
-		spp.setPosition(position);
-		spp.setScale(sf::Vector2f(0.2, 0.2));
-	}
-
+	//Override brick_power() implementation
+	void brick_power()	override;
+	
+	//Constructor
+	AddingBallBrick(float startX = 0.0f, float startY = 0.0f);
+	
 };
 
+//#2
 class PointBrick : public Brick
 {
 public:
-	void brick_power() override
-	{
-		std::cout << "Point Brick" << std::endl;
-	}
+	//Override brick_power() implementation
+	void brick_power() override;
+	
 
-	PointBrick(float startX = 0.0f, float startY = 0.0f)
-	{
-		position.x = startX;
-		position.y = startY;
-
-		texture.loadFromFile("assets/brick.png");
-		spp.setTexture(texture);
-		spp.setPosition(position);
-		spp.setScale(sf::Vector2f(0.2, 0.2));
-	}
+	//Constructor
+	PointBrick(float startX = 0.0f, float startY = 0.0f);
+	
 
 };
 

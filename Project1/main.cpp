@@ -2,6 +2,9 @@
 #include "Game.h"
 #include "Ball.h"
 
+constexpr int windowWidth = 1280;
+constexpr int windowHeight = 720;
+
 int main() {
     //Init Game
     Game game = Game();

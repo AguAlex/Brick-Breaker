@@ -5,8 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
+
 #include "Ball.h"
 #include "Platform.h"
 #include "Brick.h"
@@ -16,30 +15,39 @@ class Game
 {
 private:
 	//Game Variables
+
+	//For game characteristics
 	sf::RenderWindow* window;
 	sf::Event event;
 	sf::VideoMode videoMode;
 	sf::Time dt;
 	sf::Clock clock;
 	float bounceTimer = 0.10f; //for some bugs
+
+	//For scoreboard
 	sf::Font font;
 	sf::Text score;
-	int score_value = 0;
-	bool endGame = false;
+	int score_value;
+
+	//For endgame screen
+	bool endGame;
 	sf::Texture endgameTexture;
 	sf::Sprite endgameBackground;
 
-	const int windowHeight = 720;
+	//For making the bricks symmetric on the screen
+	int lung = 82 * 2;
+
 	const int windowWidth = 1280;
-	
+	const int windowHeight = 720;
 
 
 	//Game objects
-	Ball ball;
-	Platform *platform;
+	Ball* ball;
+	Platform* platform;
 	std::list<Brick*> bricks;
-	bool bricks_status[30] = {};
-	int lung = 82*2;
+	bool bricks_status[35] = {};
+	int bricks_number;
+	
 
 
 public:
@@ -47,18 +55,32 @@ public:
 	Game();
 	~Game();
 
-	//Accessors
+	//Checking if the game is still running
 	bool gameRunning();
 
 	//Functions
+
+	//For checking events
 	void pollEvents();
+
+	//For updating frames
 	void update();
+
+	//For rendering frames (drawing on screen)
 	void render();
 
 private:
-	//Private Functions
+
+	//The constructor is implicit
+
+	//Init the game
+	
 	void initWindow();
 	void initVariables();
+
+	
+	void resetGame();
+
 
 };
 

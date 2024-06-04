@@ -1,5 +1,7 @@
 #include "Ball.h"
 
+
+//Constructor & Destructor
 Ball::Ball(float startX, float startY)
 {
 	position.x = startX;
@@ -7,7 +9,7 @@ Ball::Ball(float startX, float startY)
 
 	ballShape.setPosition(position);
 	ballShape.setRadius(15);
-	ballShape.setFillColor(sf::Color(255, 120, 255, 255));
+	ballShape.setFillColor(sf::Color::White);
 }
 
 //Getters & Setters
@@ -21,13 +23,14 @@ sf::CircleShape Ball::getShape()
 	return ballShape;
 }
 
-//??????????????????
-float Ball::getXValue()
+float Ball::getXValue() 
 {
 	return move_directionX;
 }
 
 //Functions
+
+//For checking collisions ball - objects (bricks or window sides)
 void Ball::hitSides() 
 {
 	move_directionX = -move_directionX;
@@ -48,20 +51,7 @@ void Ball::hitPlatform()
 	move_directionY = -move_directionY;
 }
 
-void Ball::hitPlatformLeft()
-{
-	move_directionY = -move_directionY;
-	if (move_directionX > 0)
-		move_directionX = -move_directionX;
-}
-
-void Ball::hitPlatformRight()
-{
-	move_directionY = -move_directionY;
-	if (move_directionX < 0)
-		move_directionX = -move_directionX;
-}
-
+//For updating position in each frame
 void Ball::update(sf::Time dt)
 {
 	position.x += move_directionX * move_speed * dt.asSeconds();

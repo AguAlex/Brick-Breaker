@@ -3,13 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
+
 
 
 class Ball
 {
 private:
+
 	sf::Vector2f position;
 	sf::CircleShape ballShape;
 
@@ -31,6 +31,7 @@ public:
 
 	//Functions
 
+	//For checking collisions ball - objects (bricks or window sides)
 	void hitSides();
 
 	void hitTop();
@@ -39,9 +40,9 @@ public:
 
 	void hitPlatform();
 
-	void hitPlatformLeft();
-	void hitPlatformRight();
+	
 
+	//For updating position in each frame
 	void update(sf::Time dt);
 };
 

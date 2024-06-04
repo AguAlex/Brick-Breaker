@@ -1,2 +1,11 @@
-﻿  Platform.cpp
+﻿  Game.cpp
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(269,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(270,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(273,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(294,17): warning C4144: '<=': relational expression as switch expression
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(296,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(296,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(299,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(299,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Agu\source\repos\Project1\Project1\Game.cpp(303,17): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
   Project1.vcxproj -> C:\Users\Agu\source\repos\Project1\x64\Debug\Project1.exe
